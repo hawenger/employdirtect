@@ -9,6 +9,15 @@ function App() {
   return (
     <>
       <input type="text"/>
+      <input type="email" id="email" name="email" multiple></input>
+      <input type="number" name="empId" id="id" min="1" max="10"></input>
+      <select id="simple" name="simple">
+        <option>Last Name</option>
+        <option selected>First Name</option>
+        <option>Employee ID</option>
+        <option>E-mail</option>
+      </select>
+
       <button>SEARCH</button>
       <table>
         <EmployeeList employees = {employees} />
