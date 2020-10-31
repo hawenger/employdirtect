@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import EmployeeList from './components/EmployeeList';
+import FilterButton from './components/FilterButton';
 import Form from './components/Form';
+import './index.css';
 
 function App() {
-
   const remote = {value: true,
   name:'REMOTE'};
   const onSite = {value: false, name: 'On-Site'}
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Form/>
+      <FilterButton/>
       <table>
         <thead></thead>
         <tbody>

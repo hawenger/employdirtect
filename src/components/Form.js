@@ -1,37 +1,43 @@
 import React, {useRef} from 'react';
 
-export default function Form() {
-    const lastSearch = useRef();
-    const firstSearch = useRef();
-    const idSearch = useRef();
-    const remoteSearch = useRef();
-    const onSiteSearch = useRef();
-    const emailSearch = useRef();
-    const exact = useRef();
-    
-  function triggerSearchSelection(e) {
-    console.log({exact}.current.checked);
-     
- }
+export default function Form(props) {
+
+    const firstNameInput = useRef();
+    const lastNameInput = useRef();
+    const idInput = useRef();
+    const emailInput = useRef();
+    function handleSubmit(e) {
+        e.preventDefault();
+        const firstName = firstNameInput.current.value;
+        const lastName = lastNameInput.current.value;
+        const empId = idInput.current.value;
+        const empEmail = emailInput.current.value;
+
+        console.log(firstName);
+        
+        console.log(lastName);
+        
+        console.log(empId);
+        
+        console.log(empEmail);
+        }
+      
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label for="firstname">First Name:</label>
-                <input ref={firstSearch} type="text" placeholder="(not required)"/>
+                <input  ref={firstNameInput}type="text" placeholder="(not required)"/>
                 <label for="lastname">Last Name:</label>
-                <input ref={lastSearch} type="text" placeholder="(not required)"/>
+                <input  ref={lastNameInput}type="text" placeholder="(not required)"/>
                 <label for="email">E-mail:</label>
-                <input ref={emailSearch} type="email" placeholder="(not required)"/>
-                <label for="lastname">Employee ID:</label>
-                <input ref={idSearch} type="number" placeholder="(not required)"/>
-                <input ref={remoteSearch} type="checkbox" name="employeeremote" id="employeeremote"/>
-                <label for="employeeremote">Remote</label>
-                <input ref={onSiteSearch} type="checkbox" name="employeeonsite" id="employeeonsite"/>
-                <label for="employeeonsite">On-Site</label>
-                <input ref={exact} type="checkbox" name="exact" id="exact"/>
+                <input  ref={emailInput}type="email" placeholder="(not required)"/>
+                <label for="email">Employee ID:</label>
+                <input  ref={idInput}type="number" placeholder="(not required)"/>
                 <label for="exact">EXACT</label>
+                <input  type="checkbox" name="exact" id="exact"/>
+                <button ClassName="btn" type="submit">SEARCH</button>
             </form>
-            <button type="submit" onClick={triggerSearchSelection}>SEARCH</button>
+            <br></br>
         </div>
     )
 }
