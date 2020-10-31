@@ -20,6 +20,10 @@ export default function Form(props) {
         console.log(empId);
         
         console.log(empEmail);
+        firstNameInput.current.value = null
+        lastNameInput.current.value = null
+        idInput.current.value = null
+        emailInput.current.value = null
         }
       
     return (
