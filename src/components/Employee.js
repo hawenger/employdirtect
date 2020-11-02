@@ -5,6 +5,7 @@ export default function Employee( {employee} ) {
         
         <>  
             <tr>
+                <th>{employee.id}</th>
                 <th>{employee.firstName}</th>
                 <th>{employee.lastName}</th>
                 <th>{employee.email}</th>
