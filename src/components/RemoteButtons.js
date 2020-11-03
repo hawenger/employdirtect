@@ -9,20 +9,20 @@ export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmpl
     const remoteButton= useRef();
     const onSiteButton= useRef();
     const allButton= useRef();
-    function hideRemoteButton() {
-        setHideRemote(true);
-        //showOnSiteButton();
-        //showAllButton();
-    }
-    function hideOnSiteButton() {
-        setHideOnSite(true);
-        //showRemoteButton();
-        //showAllButton();
-    }
-    function hideAllButton() {
+    function hideRemoteButton(value) {
+        setHideRemote(value);
+        setHideOnSite(false);
         setHideAll(false);
-        //showRemoteButton();
-        //showOnSiteButton();
+    }
+    function hideOnSiteButton(value) {
+        setHideOnSite(value);
+        setHideRemote(false);
+        setHideAll(false);
+    }
+    function hideAllButton(value) {
+        setHideAll(value);
+        setHideRemote(false);
+        setHideOnSite(false);
     }
     //function showRemoteButton() {
     //    setHide(false);
@@ -36,9 +36,9 @@ export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmpl
     
     return (
         <div>
-            <button style={{ display: hideRemote ? "none" : "block" }} ref={remoteButton} className="remoteFilter" value ='remote' onClick={remoteEmployees, hideRemoteButton}>REMOTE</button>
-            <button style={{ display: hideOnSite ? "none" : "block" }} ref={onSiteButton} className="onSiteFilter" value='onSite' onClick={onSiteEmployees, hideOnSiteButton}>On-Site</button>
-            <button style={{ display: hideAll ? "none" : "block" }} ref={allButton} className="allFilter" value='all' onClick={allEmployees, hideAllButton}>All</button>
+            <button style={{ display: hideRemote ? "none" : "block" }} ref={remoteButton} className="remoteFilter" value = {true} onClick={remoteEmployees, hideRemoteButton}>REMOTE</button>
+            <button style={{ display: hideOnSite ? "none" : "block" }} ref={onSiteButton} className="onSiteFilter" value={true} onClick={onSiteEmployees, hideOnSiteButton}>On-Site</button>
+            <button style={{ display: hideAll ? "none" : "block" }} ref={allButton} className="allFilter" value={true} onClick={allEmployees, hideAllButton}>All</button>
         </div>
     )
 }
