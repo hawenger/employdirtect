@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import EmployeeList from './components/EmployeeList';
 import FilterButton from './components/FilterButton';
 import Form from './components/Form';
@@ -6,6 +6,8 @@ import RemoteButtons from './components/RemoteButtons'
 import './index.css';
 
 function App() {
+
+  let nameInput=useRef();
   const remote = {value: true,
   name:'REMOTE'};
   const onSite = {value: false, name: 'On-Site'}
@@ -14,11 +16,13 @@ function App() {
   const[employees, setEmployees] = useState(currentEmployees)
 
   function remoteEmployees() {
+
     setEmployees(employees.filter(function(obj) {
       return obj.remote === remote.name;
     }))
   }
   function onSiteEmployees() {
+
     setEmployees(employees.filter(function(obj) {
       return obj.remote === onSite.name;
     }))
@@ -27,10 +31,24 @@ function App() {
     setEmployees(allEmployee);
   }
 
+  function lastNameSearch() {
+    let newData = Object.assign([], currentEmployees);
+    let res=nameInput.current.value;
+    console.log(res)
+    setEmployees(newData.filter(function(obj){
+     
+      return obj.lastName.match(res)
+    }))
+  }
+
   return (
     <>
+      <h1>DIRTECT EMPLOYEES</h1>
       <Form/>
       <FilterButton/>
+      <input ref={nameInput} type="text"></input>
+      <button onClick={lastNameSearch}>CLICK ME</button>
+      <RemoteButtons remoteEmployees = {remoteEmployees} onSiteEmployees = {onSiteEmployees} allEmployees={allEmployees}/>
       <table>
         <thead></thead>
         <tbody>
@@ -38,7 +56,6 @@ function App() {
         </tbody>
         
       </table>
-      <RemoteButtons remoteEmployees = {remoteEmployees} onSiteEmployees = {onSiteEmployees} allEmployees={allEmployees}/>
     </>
   )
 }

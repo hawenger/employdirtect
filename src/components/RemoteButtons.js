@@ -1,14 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React, { useState} from 'react';
 import '../index.css'
 
 export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmployees}) {
 
     const [hideRemote, setHideRemote]= useState(false);
     const [hideOnSite, setHideOnSite]= useState(false);
-    const [hideAll, setHideAll]= useState(true);
-    const remoteButton= useRef();
-    const onSiteButton= useRef();
-    const allButton= useRef();
+    const [hideAll, setHideAll]= useState(false);
     function hideRemoteButton(value) {
         setHideRemote(value);
         setHideOnSite(false);
@@ -22,7 +19,7 @@ export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmpl
     function hideAllButton(value) {
         setHideAll(value);
         setHideRemote(false);
-        setHideOnSite(false);
+        setHideOnSite(false)
     }
     //function showRemoteButton() {
     //    setHide(false);
@@ -36,9 +33,9 @@ export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmpl
     
     return (
         <div>
-            <button style={{ display: hideRemote ? "none" : "block" }} ref={remoteButton} className="remoteFilter" value = {true} onClick={remoteEmployees, hideRemoteButton}>REMOTE</button>
-            <button style={{ display: hideOnSite ? "none" : "block" }} ref={onSiteButton} className="onSiteFilter" value={true} onClick={onSiteEmployees, hideOnSiteButton}>On-Site</button>
-            <button style={{ display: hideAll ? "none" : "block" }} ref={allButton} className="allFilter" value={true} onClick={allEmployees, hideAllButton}>All</button>
+            <button style={{ display: hideRemote ? "none" : "block" }}className="remoteFilter" value = {true} onClick={remoteEmployees}>REMOTE</button>
+            <button style={{ display: hideOnSite ? "none" : "block" }}className="onSiteFilter" value={true} onClick={onSiteEmployees}>On-Site</button>
+            <button style={{ display: hideAll ? "none" : "block" }} className="allFilter" value={true} onClick={allEmployees}>All</button>
         </div>
     )
 }
