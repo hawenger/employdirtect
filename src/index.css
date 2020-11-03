@@ -12,3 +12,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 }
+
+.btn {
+    background-color: yellow;
+}
+
+.remoteFilter {
+    background-color: yellow;
+}
+.hidden {
+    display: none;
+}
