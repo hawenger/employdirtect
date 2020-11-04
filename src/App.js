@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
 import EmployeeList from './components/EmployeeList';
-import FilterButton from './components/FilterButton';
-import Form from './components/Form';
 import RemoteButtons from './components/RemoteButtons'
 import './index.css';
 
@@ -31,23 +29,44 @@ function App() {
     setEmployees(allEmployee);
   }
 
+  function sortAscending() {
+    let newData = Object.assign([], employees);
+    let sortedData = newData.sort(function(a, b){
+      if (a.lastName < b.lastName) return -1;
+      else if (a.lastName > b.lastName) return 1;
+      return 0;
+    });
+    setEmployees(sortedData);
+  }
+
+  function sortDescending() {
+    let newData = Object.assign([], employees);
+    let sortedData = newData.sort(function(a, b){
+      if (a.lastName > b.lastName) return -1;
+      else if (a.lastName < b.lastName) return 1;
+      return 0;
+    });
+    setEmployees(sortedData);
+  }
+
   function lastNameSearch() {
     let newData = Object.assign([], currentEmployees);
-    let res=nameInput.current.value;
+    let res=nameInput.current.value.toLowerCase();
     console.log(res)
     setEmployees(newData.filter(function(obj){
      
-      return obj.lastName.match(res)
+      return obj.lastName.toLowerCase().match(res)
+      
     }))
   }
 
   return (
     <>
       <h1>DIRTECT EMPLOYEES</h1>
-      <Form/>
-      <FilterButton/>
       <input ref={nameInput} type="text"></input>
-      <button onClick={lastNameSearch}>CLICK ME</button>
+      <button onClick={lastNameSearch}>SEARCH</button>
+      <button onClick={sortAscending}>Last Name (A-Z)</button>
+      <button onClick={sortDescending}>Last Name (Z-A)</button>
       <RemoteButtons remoteEmployees = {remoteEmployees} onSiteEmployees = {onSiteEmployees} allEmployees={allEmployees}/>
       <table>
         <thead></thead>
