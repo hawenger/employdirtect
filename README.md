@@ -1,6 +1,8 @@
 # Employee Direct
 #### This application allows all manager's of MNC Dirtect to view their employees, sort by last name( a-z ascending and descending), filter remote verse on-site employees and search for employees by last name
 
+[VIEW APP](https://employ-dirtect.herokuapp.com/)
+
 [Application Image](https://user-images.githubusercontent.com/63066634/98186979-cc9a0000-1ec4-11eb-81a2-36e89a451ae1.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
