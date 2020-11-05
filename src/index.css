@@ -15,7 +15,7 @@ body {
   "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(244, 241, 222, 1);
+  background-color: rgb(242, 204, 143, 1);
 
 }
 
@@ -76,9 +76,9 @@ tbody{
 button {
   padding: .3em;
   border: .2em solid rgba(244, 241, 222, 1);
-  border-radius: 1em;
   background-color: rgba(129, 178, 154, 1);
   color: #333;
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(61, 64, 91, 0.5));
 }
 button:hover {
   transition: ease-in;

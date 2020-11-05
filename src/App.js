@@ -67,7 +67,7 @@ function App() {
       <h1>DIRTECT EMPLOYEES</h1>
       <br></br>
       <input ref={nameInput} placeholder="Employee last name..." type="text"></input>
-      <button onClick={lastNameSearch}>SEARCH</button>
+      <button onClick={lastNameSearch}style={{margin:".5em"}}>SEARCH</button>
       <br></br>
       <br></br>
       <h4>Sort By:</h4>
