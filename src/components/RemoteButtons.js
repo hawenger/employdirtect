@@ -32,10 +32,10 @@ export default function RemoteButtons({remoteEmployees, onSiteEmployees, allEmpl
     //}
     
     return (
-        <div>
-            <button style={{ display: hideRemote ? "none" : "block" }}className="remoteFilter" value = {true} onClick={remoteEmployees}>REMOTE</button>
-            <button style={{ display: hideOnSite ? "none" : "block" }}className="onSiteFilter" value={true} onClick={onSiteEmployees}>On-Site</button>
-            <button style={{ display: hideAll ? "none" : "block" }} className="allFilter" value={true} onClick={allEmployees}>All</button>
+        <div className="remoteButtons">
+            <button style={{ display: hideRemote ? "none" : "block" },{margin:".5em"}}className="remoteFilter" value = {true} onClick={remoteEmployees}>REMOTE</button>
+            <button style={{ display: hideOnSite ? "none" : "block" },{margin:".5em"}}className="onSiteFilter" value={true} onClick={onSiteEmployees}>On-Site</button>
+            <button style={{ display: hideAll ? "none" : "block" },{margin:".5em"}} className="allFilter" value={true} onClick={allEmployees}>ALL EMPLOYEES</button>
         </div>
     )
 }

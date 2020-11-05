@@ -1,25 +1,117 @@
+* {
+  text-align: center;
+}
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(244, 241, 222, 1);
 
 }
 
-.btn {
-    background-color: yellow;
+*>#root {
+  max-width: 80em;
+  background-color: rgba(224, 122, 95, 1);
 }
 
-.remoteFilter {
-    background-color: yellow;
+h1{
+  padding-top: 1em;
+  border-top: 1em solid rgba(61, 64, 91, 1);
 }
+
+h4 {
+  color: #333;
+  text-transform: uppercase;  
+}
+
+table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+thead {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: .5em solid rgba(244, 241, 222, 1);
+  width: 100%;
+  padding: .5em;
+  color: rgba(61, 64, 91, 1);
+  padding-top: .8em;
+}
+
+th {
+  font-size: .8em;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: 1em;
+}
+tbody{
+  padding-top: 1em;
+}
+
+*>tbody{
+  color: #333;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.allFilter {
+    background-color: rgb(242, 204, 143, 1);
+}
+
+button {
+  padding: .3em;
+  border: .2em solid rgba(244, 241, 222, 1);
+  border-radius: 1em;
+  background-color: rgba(129, 178, 154, 1);
+  color: #333;
+}
+button:hover {
+  transition: ease-in;
+  transition-duration: .03s;
+  background-color: transparent;
+}
+.remoteButtons {
+  display: -webkit-inline-box;
+}
+
 .hidden {
     display: none;
+}
+
+@media (min-width: 43em){
+  th { 
+    font-size: 1em; 
+    padding-top: 1em;
+    padding-right: .5em;
+    padding-left: .5em;
+  }  
+}
+
+@media (min-width: 62em){
+  th { 
+    font-size: initial;
+    padding: 1em; 
+  }  
+}
+
+@media (min-width: 82em){
+  th { 
+    font-size: initial;
+    padding: 1.5em; 
+  }  
 }
