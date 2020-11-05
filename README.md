@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Employee Direct
+#### This application allows all manager's of MNC Dirtect to view their employees, sort by last name( a-z ascending and descending), filter remote verse on-site employees and search for employees by last name
+
+[Application Image](https://user-images.githubusercontent.com/63066634/98186979-cc9a0000-1ec4-11eb-81a2-36e89a451ae1.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +71,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Future Updates
+
+Ability to search by any employee identifying factor i.e(first name, id, etc).  Use of Mongo or MySQL for employee database.  Scroll state for employee vlist views
+
+### Bugs
+
+Employee last name search is case sensitive
+
+## License
+NONE
+
+## Contributing
+Hannah Wenger
+        
+## Questions
+#### Github Profile
+[hawenger](https://github.com/hawenger)
+#### Please submit questions to:
+<hamecow@gmail.com>
+
+
